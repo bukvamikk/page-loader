@@ -1,12 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .preloader {
+            align-items: center;
+            background: #f1f2f3;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            left: 0;
+            position: fixed;
+            top: 0;
+            transition: opacity 0.3s linear;
+            width: 100%;
+            z-index: 9999;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="preloader">
+        <img src="src/img/infinity.svg" alt="spinner">
+    </div>
+
+    <h1>Star Wars</h1>
+    <p>
+        Learn about the Force, Luke. Look, I can take you as far as Anchorhead. You can get a transport there to Mos
+        Eisley or wherever you're going. You must do what you feel is right, of course.
+    </p>
+
+    <p>
+        He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make
+        the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations.
+        A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go
+        alone. Whatever you say. I've done more that I bargained for on this trip already. Be patient, Luke. Stay and
+        watch over the droids. But he can...
+    </p>
+
+    <p>
+        Are you all right? What's wrong? I felt a great disturbance in the Force...as if millions of voices suddenly
+        cried out in terror and were suddenly silenced. I fear something terrible has happened. You'd better get on with
+        your exercises. Well, you can forget your troubles with those Imperial slugs. I told you I'd outrun 'em. Don't
+        everyone thank me at once. Anyway, we should be at Alderaan about oh-two-hundred hours. Now be careful, Artoo.
+        He made a fair move. Screaming about it won't help you. Let him have it. It's not wise to upset a Wookiee. But
+        sir, nobody worries about upsetting a droid. That's 'cause droids don't pull people's arms out of their socket
+        when they lose. Wookiees are known to do that. I see your point, sir. I suggest a new strategy, Artoo. Let the
+        Wookiee win.
+    </p>
+
+    <p>
+        You must learn the ways of the Force if you're to come with me to Alderaan. Alderaan? I'm not going to Alderaan.
+        I've got to go home. It's late, I'm in for it as it is. I need your help, Luke. She needs your help. I'm getting
+        too old for this sort of thing. I can't get involved! I've got work to do! It's not that I like the Empire. I
+        hate it! But there's nothing I can do about it right now. It's such a long way from here. That's your uncle
+        talking. Oh, God, my uncle. How am I ever going to explain this?
+    </p>
+
+    <p>
+        The ship's all yours. If the scanners pick up anything, report it immediately. All right, let's go. Hey down
+        there, could you give us a hand with this? TX-four-one-two. Why aren't you at your post? TX-four-one-two, do you
+        copy? Take over. We've got a bad transmitter. I'll see what I can do. You know, between his howling and your
+        blasting everything in sight, it's a wonder the whole station doesn't know we're here. Bring them on! I prefer a
+        straight fight to all this sneaking around. We found the computer outlet, sir. Plug in. He should be able to
+        interpret the entire Imperial computer network.
+    </p>
+
+    <script>
+        const preloader = document.querySelector('.preloader')
+
+        const fadeEffect = setInterval(() => {
+            if (!preloader.style.opacity) {
+                preloader.style.opacity = 1;
+            }
+
+            if (preloader.style.opacity > 0) {
+                preloader.style.opacity -= 0.1;
+            } else {
+                clearInterval(fadeEffect);
+            }
+        }, 100)
+
+        // We are intentionally using the load event instead of DOMContentLoaded because the DOMContentLoaded event is fired when the document has been completely loaded and parsed. That means it doesn’t *wait for stylesheets, images, and subframes to finish loading* *before it executes*. The load event can be used to detect a fully-loaded page, and that is exactly what we are looking for. Otherwise, the function would start before our CSS and SVG are ready.
+
+        window.addEventListener('load', fadeEffect);
+
+    </script>
+
 </body>
-</html>
+
+</html>www
